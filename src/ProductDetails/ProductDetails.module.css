@@ -1,0 +1,71 @@
+.ProductData {
+    width: 100%;
+}
+
+.ProductTitle{
+    font-size: 30px;
+    font-weight: 600px; 
+}
+
+@media screen{
+    .ProductTitle{
+        margin: 70px;
+    }
+}
+
+.ProductDescription{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.SectionHeading {
+    font-size: 28px;
+    margin-bottom: 8px;
+    
+}
+.ProductImage{
+    width: 100px;
+    max-width: 80px;
+    border: 2px solid transparent;
+    border-radius: 8px ;
+    margin-right: 12px;
+    cursor: pointer;
+
+}
+.SelectedProductImage{
+    border: 2px solid rgb(0, 129, 146);
+
+}
+
+.FeatureItem{
+    min-width: 80px;
+    background-color: rgb(253, 252, 252);
+    border-radius: 8px;
+    border: 0;
+    text-align: center;
+    margin-right: 12px;
+    cursor: pointer;
+    box-sizing: content-box;
+    
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+.SelectedFeatureImage{
+    color: white;
+    background-color: gray;
+}
+
+.PrimaryButton{
+    color: white;
+    background-color:teal ;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 0;
+    padding: 12px 24px;
+    cursor: pointer;
+    margin-top: 36px;
+
+}

@@ -1,0 +1,30 @@
+.classname{
+    background-color: indigo;
+    width: 200px;
+}
+.img1 {
+  margin-left: 550px;
+  margin-right: 550px;
+  width: "100px";
+  height: 100px;
+}
+.img2 {
+  margin-left: 550px;
+  margin-right: 550px;
+  width: "100px";
+  height: 100px;
+}
+.img3 {
+  margin-left: 550px;
+  margin-right: 550px;
+  width: "100px";
+  height: 100px;
+}
+
+.img1, .img2, .img3{
+  background-color: green;
+}
+p {
+  text-align: center;
+  font-size: 20px;
+}

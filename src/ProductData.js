@@ -1,7 +1,7 @@
 const ProductData = {
     title: 'FitBit 19 - The Smartest Watch',
     description: 'This watch is Amazon product This watch is Amazon product This watch is Amazon product This watch is Amazon product.',
-    colorOption: [
+    colorOptions: [
         {
             styleName: 'Black Strap',
             imageUrl: 'https://imgur.com/iOeUBV7.png'

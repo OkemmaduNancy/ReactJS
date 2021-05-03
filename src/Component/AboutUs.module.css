@@ -1,0 +1,11 @@
+.AboutUs{
+    background-color: gray;
+    text-align: center;
+    padding: 20px;
+    
+}
+.button{
+    background-color:lime;
+    padding: 5px;
+    border-radius: 5px;
+}

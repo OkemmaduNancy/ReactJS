@@ -1,46 +1,93 @@
-import React from 'react';
+import React, { Component } from "react";
+// import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import classes from './App.module.css';
-import ProductData from './ProductData';
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <nav className={classes.Topbar}>
-          <img src="https://m.media-amazon.com/images/I/31%2BDgxPWXtL.jpg" alt="Amazon Logo" />
-        </nav>
-      </header>
+import classes from "./App.module.css";
+// import ButtonClick from './ButtonClick';
+import ProductData from "./ProductData";
+import ProductDetails from "./ProductDetails/ProductDetails";
+import ProductPreview from "./ProductPreview/ProductPreview";
+import Topbar from "./Topbar/Topbar";
 
-      <div className={classes.MainContainer}>
-        <div className={classes.ProductPreview}>
-          <img src="https://imgur.com/iOeUBV7.png" alt="Product Preview" />
+// class Mydate {
+//   /**
+//    * Gets my name as eric
+//    * @returns {string}
+//    */
+//   getMeOut(){
+//     return "eric"
+//   }
+// }
 
-          <div className={classes.FeatureData}>
-            <p>{`${new Date().getHours()}:${new Date().getMinutes}`}</p>
+// const obj = new Mydate()
+
+// const myName = obj.getMeOut()
+
+class App extends Component {
+  state = {
+    ProductData: ProductData,
+    currentSelectedFeature: 0,
+    currentPreviewImagePos: 0,
+  };
+
+  onColorOptionClick = (pos) => {
+    this.setState({ currentPreviewImagePos: pos });
+  };
+
+  onFeatureItemClick = (pos) => {
+    this.setState({ currentSelectedFeature: pos });
+  };
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('Next state => ', nextState);
+  //   console.log('Current State => ', this.state);
+
+  // return true;
+  // }
+
+  //  NewRoute = () => {
+  //    <div>
+  //      <p>New Route</p>
+  //    </div>
+  //  }
+
+  render() {
+    return (
+      // <BrowserRouter>
+      // <Switch>
+      //   <Route path="/new" component={this.NewRoute} />
+
+        <div className="App">
+          {/* <ButtonClick /> */}
+
+          <Topbar />
+
+          <div className={classes.MainContainer}>
+            <div className={classes.ProductPreview}>
+              <ProductPreview
+                currentPreviewImage={
+                  this.state.ProductData.colorOptions[
+                    this.state.currentPreviewImagePos
+                  ].imageUrl
+                }
+                currentSelectedFeature={this.state.currentSelectedFeature}
+              />
+            </div>
+
+            <div className={classes.ProductData}>
+              <ProductDetails
+                data={this.state.ProductData}
+                onColorOptionClick={this.onColorOptionClick}
+                currentPreviewImagePos={this.state.currentPreviewImagePos}
+                onFeatureItemClick={this.onFeatureItemClick}
+                currentSelectedFeature={this.state.currentSelectedFeature}
+              />
+            </div>
           </div>
         </div>
-
-        <div className={classes.ProductData}>
-          <h1 className={classes.ProductTitle}>{ProductData.title}</h1>
-          <p className={classes.ProductDescription}>{ProductData.description}</p>
-          <h3 className={classes.sectionHeading}>Select Color</h3>
-          <div>
-            <img className={[classes.ProductImage, classes.SelectedProductImage].join(' ')} src="https://imgur.com/iOeUBV7.png" alt="Black Colored Watch" />
-            <img className={classes.ProductImage} src="https://imgur.com/PTgQlim.png" alt="Red Colored Watch" />
-            <img className={classes.ProductImage} src="https://imgur.com/Mplj1YR.png" alt="Blue Colored Watch" />
-            <img className={classes.ProductImage} src="https://imgur.com/xSIK4M8.png" alt="Purple Colored Watch" />
-          </div>
-          <h3 className={classes.sectionHeading}>Features</h3>
-          <div>
-            <button className={[classes.FeatureItem, classes.SelectedFeatureImage].join(' ')}>Time</button>
-            <button className={classes.FeatureItem}>Heart Rate</button>
-          </div>
-          <button className={classes.PrimaryButton}>Buy Now</button>
-        </div>
-      </div>
-    </div>
-  );
+      //   </Switch>
+      // </BrowserRouter>
+    );
+  }
 }
 
 export default App;
-
