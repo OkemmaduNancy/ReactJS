@@ -15,12 +15,13 @@ const Nav = () => {
 
 const Store = () => {
   return (
-    <div>
+    <div >
       <Nav />
-
-      {data.map(({ imageUrl, description, id}) => (
-        <Card imageUrl={imageUrl} description={description}  id={id}/>
-      ))}
+      <a className={classes.Card}>
+        {data.map(({ imageUrl, description, id, btn}) => (
+          <Card imageUrl={imageUrl} description={description} id={id} btn={btn} />
+        ))}
+      </a>
     </div>
   );
 };

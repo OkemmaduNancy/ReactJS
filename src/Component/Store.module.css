@@ -22,3 +22,10 @@
   padding: 5px;
   border-color: rgba(92, 255, 198, 0.822);
 }
+
+.Card{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 400px 400px 400px;
+  /* grid-template-rows: 350px 350px 350px; */
+}
