@@ -1,20 +1,27 @@
 import React from "react";
-
+// import classes from "./"
 const Navbar = () => {
   return (
     <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
+      <p>
+        <li>
+          <a href="/">Home</a>
+        </li>
+      </p>
+      <p>
+        <li>
+          <a href="about-us">About Us</a>
+        </li>
+      </p>
+      <p>
+        <li>
+          <a href="contact-us">Contact Us</a>
+        </li>
+      </p>
       <li>
         <a href="store">Store</a>
       </li>
-      <li>
-        <a href="about-us">About Us</a>
-      </li>
-      <li>
-        <a href="contact-us">Contact Us</a>
-      </li>
+
     </ul>
   );
 };
