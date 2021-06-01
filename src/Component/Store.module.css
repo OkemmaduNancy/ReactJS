@@ -16,16 +16,17 @@
   font-size: 20px;
 }
 .Store button {
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 25px;
+  margin-left: 25px;
   border-radius: 10px;
-  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-color: rgba(92, 255, 198, 0.822);
+  background-color: rgb(187, 179, 179);
 }
 
 .Card{
-  display: grid;
-  justify-content: center;
+   display: grid; 
   grid-template-columns: 400px 400px 400px;
-  /* grid-template-rows: 350px 350px 350px; */
+  /*grid-template-rows: 350px 350px 350px; */ 
 }

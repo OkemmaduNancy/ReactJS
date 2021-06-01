@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Store.module.css";
 import Card from "./Card";
 import { data } from "./data";
@@ -14,12 +14,32 @@ const Nav = () => {
 };
 
 const Store = () => {
+  const [productsInfo, setProducts] = useState([])
+  const [error, seterror] = useState("")
+
+  async function getProduct() {
+    try {
+      const result = await fetch('http://localhost:4000/v1/product/all')
+      if (result.status > 300) {
+        alert("Error occured")
+      }
+
+      const data = await result.json()
+      setProducts(data);
+    } catch (error) {
+      seterror({ error: error.message })
+    }
+  }
+
+  useEffect(() => {
+    getProduct()
+  }, [])
   return (
-    <div >
+    <div className={classes.body}>
       <Nav />
       <a className={classes.Card}>
-        {data.map(({ imageUrl, description, id, btn}) => (
-          <Card imageUrl={imageUrl} description={description} id={id} btn={btn} />
+        {productsInfo.map(({ imageUrl, description, name, _id }) => (
+          <Card imageUrl={imageUrl} description={description} id={_id} btn={name} />
         ))}
       </a>
     </div>

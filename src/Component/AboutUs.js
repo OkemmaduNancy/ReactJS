@@ -55,7 +55,7 @@ const AboutUs = () => {
         Pellentesque volutpat porttitor nunc, quis sollicitudin velit aliquet
         vitae.
       </p>
-      <button onClick={() => history.push("/App")} className={classes.button}>Read More</button>
+      <button onClick={() => history.push("/contact-us")} className={classes.button}>Read More</button>
     </div>
   );
 };

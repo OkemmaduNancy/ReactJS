@@ -61,7 +61,7 @@ const Contact = () => {
           </li>
           <br />
           <li>
-            <button onClick={() => history.push("/about-us")} type="submit">Submit</button>
+            <button onClick={() => history.push("/App")} type="submit">Submit</button>
           </li>
         </ul>
         <form />

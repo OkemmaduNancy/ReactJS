@@ -27,3 +27,4 @@ yarn-error.log*
  setupTests.js
  reporttWebVitals.js
  logo.svg
+ package-lock.json
