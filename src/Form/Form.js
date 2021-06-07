@@ -1,6 +1,10 @@
 import React from "react"
-import classes from './Form'
+import { useHistory } from "react-router";
+import classes from './form.module.css'
 const Form = () => {
+
+    const history = useHistory();
+
     const [formData, updateFormData] = React.useState({});
     const [error, seterror] = React.useState("")
 
@@ -31,47 +35,36 @@ const Form = () => {
     }, [error])
 
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.sign}>
             <h2>Fill the form bellow</h2>
             <form onSubmit={handleSubmit}>
-                <fieldset>
+                <fieldset className={classes.Form}>
                     <label>
-                        Name
+                        Name:
           <input name="name" onChange={handleChange} />
                     </label>
-                    <br />
                     <label>
                         Quantity:
           <input name="quantity" onChange={handleChange} />
                     </label>
-                    <br />
                     <label>
                         Price:
           <input name="price" onChange={handleChange} />
                     </label>
-                    <br />
                     <label>
                         Description:
           <input name="description" onChange={handleChange} />
                     </label>
-                    <br />
-                    <label>
-                        imageUrl:
-          <input name="imageUrl" onChange={handleChange} />
-                    </label>
-                    <br />
                     <label>
                         Color:
           <input name="color" onChange={handleChange} />
                     </label>
-                    <br />
                     <label>
                         Categories:
           <input name="categories" onChange={handleChange} />
                     </label>
-                    <br />
                 </fieldset>
-                <button type="submit">Submit</button>
+                <button className={classes.btnSubmit} onClick={() => history.push("/store")} type="submit">Submit</button>
             </form>
         </div>
     );

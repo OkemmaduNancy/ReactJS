@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, message } from 'antd';
 import classes from "./Card.module.css";
+import { Link } from "react-router-dom";
 
 const Card = ({ imageUrl, description, id, btn }) => {
   const [error, seterror] = React.useState("")
@@ -18,7 +19,7 @@ const Card = ({ imageUrl, description, id, btn }) => {
 
       const data = await result.json()
       message.success({
-        content: "Product Delete Succesfully",
+        content: "Product Deleted Succesfully",
         style: {
           marginTop: '10vh',
         },
@@ -32,10 +33,13 @@ const Card = ({ imageUrl, description, id, btn }) => {
 
   return (
     <div className={classes.Card}>
-      <img src={imageUrl} className={classname} />
+      <Link to={`/product/${id}`}>
+        <img src={imageUrl} className={classname} />
+        <div>{description}</div>
+      </Link>
       <button>{btn}</button>
       <Button type="primary" onClick={() => handledelete(id)}>delete</Button>
-      <p>{description}</p>
+
     </div>
   );
 }

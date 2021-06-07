@@ -6,32 +6,35 @@ const Contact = () => {
   const history = useHistory();
 
   return (
-    <div>
+    <div >
       <h1 className={classes.ContactUs}>Contact Us</h1>
 
-      <p1>
-        <form id="form1" />
+      <form />
+      <fieldset className={classes.Form1}>
         <ul>
           <li>
-            <label for="fname">First Name:</label>
+            First Name:
             <input type="text" name="first-name" id="fname" />
           </li>
           <br />
           <li>
-            <label for="lname">Last Name:</label>
+            Last Name:
             <input type="text" name="last-name" id="lname" />
           </li>
           <br />
           <li>
-            Age: <input type="number" />
+            Age:
+            <input type="number" />
           </li>
           <br />
           <li>
-            Date of Birth: <input type="date" />
+            Date of Birth:
+            <input type="date" />
           </li>
           <br />
           <li>
-            Upload Photo: <input type="file" />
+            Upload Photo:
+            <input type="file" />
           </li>
           <br />
           <li>
@@ -43,7 +46,8 @@ const Contact = () => {
           </li>
           <br />
           <li>
-            Marital Status: <input type="radio" />
+            Marital Status:
+            <input type="radio" />
           </li>
           <br />
           <li>
@@ -57,15 +61,16 @@ const Contact = () => {
           </li>
           <br />
           <li>
-            Graduated: <input type="checkbox" />
+            Graduated:
+            <input type="checkbox" />
           </li>
           <br />
           <li>
             <button onClick={() => history.push("/App")} type="submit">Submit</button>
           </li>
         </ul>
-        <form />
-      </p1>
+      </fieldset>
+      <form />
     </div>
   );
 };

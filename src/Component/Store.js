@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import classes from "./Store.module.css";
 import Card from "./Card";
 import { data } from "./data";
+import { useHistory } from "react-router";
 
 const Nav = () => {
+  const history = useHistory
   return (
     <h6 className={classes.Store}>
       <label for="site-search">Search :</label>
       <input type="search"></input>
-      <button>Search</button>
+      <button className={classes.Sbtn} >Search</button>
     </h6>
   );
 };
@@ -38,7 +40,7 @@ const Store = () => {
     <div className={classes.body}>
       <Nav />
       <a className={classes.Card}>
-        {productsInfo.map(({ imageUrl, description, name, _id }) => (
+        {productsInfo.map(({ imageUrl, description, name, _id, }) => (
           <Card imageUrl={imageUrl} description={description} id={_id} btn={name} />
         ))}
       </a>

@@ -6,7 +6,7 @@
 .Store input {
   width: 350px;
   height: 35px;
-  margin-top: 20px;
+  margin-top: 35px;
   border-radius: 50px;
   border-color: rgba(223, 222, 222, 0.822);
 }
@@ -15,8 +15,9 @@
   margin-right: 20px;
   font-size: 20px;
 }
-.Store button {
-  margin-top: 25px;
+.Sbtn {
+  margin-top: 40px;
+  margin-bottom: 40px;
   margin-left: 25px;
   border-radius: 10px;
   padding-left: 10px;
