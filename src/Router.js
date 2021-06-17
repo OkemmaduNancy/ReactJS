@@ -5,7 +5,7 @@ import Form from "./Form/Form";
 import Home from "./Component/Home";
 import Store from "./Component/Store";
 import AboutUs from "./Component/AboutUs";
-import ContactUs from "./Component/ContactUs";
+import SignUp from "./Component/SignUp";
 import ProductDetails from "./Component/ProductDetails";
 class Routes extends Component {
   render() {
@@ -19,7 +19,7 @@ class Routes extends Component {
             <Route path="/about-us" component={AboutUs} />
             <Route path="/product/:id" component={ProductDetails} />
             <Route path="/store" component={Store} />
-            <Route path="/contact-us" component={ContactUs} />
+            <Route path="/sign-up" component={SignUp} />
 
             <Route path="*" component={() => <h1> Not found </h1>} />
           </Switch>

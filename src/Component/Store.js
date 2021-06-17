@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Store.module.css";
 import Card from "./Card";
+import Navbar from "./Nav/RightNav";
 import { data } from "./data";
-import { useHistory } from "react-router";
+import Checkbox from "./Nav/Checkbox";
+import Burger from "./Nav/Burger";
+
+
+
 
 const Nav = () => {
-  const history = useHistory
   return (
-    <h6 className={classes.Store}>
-      <label for="site-search">Search :</label>
-      <input type="search"></input>
-      <button className={classes.Sbtn} >Search</button>
-    </h6>
+    <div className={classes.storeDiv}>
+      <label className={classes.siteLabel} for="site-search">Search :</label>
+      <input className={classes.siteInput} type="search"></input>
+      <button className={classes.storeButton} >Search</button>
+    </div>
   );
 };
 
@@ -37,11 +41,14 @@ const Store = () => {
     getProduct()
   }, [])
   return (
-    <div className={classes.body}>
+    <div className={classes.bodyStore}>
+      <Navbar />
+      <Burger />
+      <Checkbox />
       <Nav />
       <a className={classes.Card}>
         {productsInfo.map(({ imageUrl, description, name, _id, }) => (
-          <Card imageUrl={imageUrl} description={description} id={_id} btn={name} />
+          <Card imageUrl={imageUrl} description={description} id={_id} card_button={name} />
         ))}
       </a>
     </div>

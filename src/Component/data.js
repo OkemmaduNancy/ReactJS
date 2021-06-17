@@ -19,7 +19,7 @@
     id:"3",
     price: "$20.55",
     imageUrl: "https://imgur.com/Mplj1YR.png",
-    btn: "Click Card",
+    card_button: "Click Card",
     description:"This watch is Amazon product. Amazon smart watch. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum orci at ex cursus, ut tincidunt dolor rhoncus. Nunc dolor massa tempus eget erat id. ",
   },
 
@@ -49,4 +49,3 @@
   
 ];
 
-// export default Data

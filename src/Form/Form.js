@@ -39,32 +39,32 @@ const Form = () => {
             <h2>Fill the form bellow</h2>
             <form onSubmit={handleSubmit}>
                 <fieldset className={classes.Form}>
-                    <label>
+                    <label className={classes.label1}>
                         Name:
           <input name="name" onChange={handleChange} />
                     </label>
-                    <label>
+                    <label className={classes.label1}>
                         Quantity:
           <input name="quantity" onChange={handleChange} />
                     </label>
-                    <label>
+                    <label className={classes.label1}>
                         Price:
           <input name="price" onChange={handleChange} />
                     </label>
-                    <label>
+                    <label className={classes.label1}>
                         Description:
           <input name="description" onChange={handleChange} />
                     </label>
-                    <label>
+                    <label className={classes.label1}>
                         Color:
           <input name="color" onChange={handleChange} />
                     </label>
-                    <label>
+                    <label className={classes.label1}>
                         Categories:
           <input name="categories" onChange={handleChange} />
                     </label>
                 </fieldset>
-                <button className={classes.btnSubmit} onClick={() => history.push("/store")} type="submit">Submit</button>
+                <button className={classes.form_button} onClick={() => history.push("/store")} type="submit">Submit</button>
             </form>
         </div>
     );

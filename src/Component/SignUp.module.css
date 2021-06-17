@@ -1,0 +1,43 @@
+.fieldset1{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding-left: 20px; 
+    padding-right: 20px;
+    margin: 0 auto;
+    width: 650px;
+    margin-bottom: 50px;
+    display: grid;
+    justify-content: center; 
+    grid-template-columns: 200px 200px 200px; 
+    grid-template-rows: 100px 100px; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19);    
+  
+
+}
+.signUp_form{
+    margin: 50px;
+    margin-bottom: 50px;
+    justify-self: center;
+    grid-row-gap: 10px;
+
+} 
+.file{
+    margin-left: 100px;
+}
+.signUp{
+    text-align: center;
+}
+
+.signUp_button{
+    margin-bottom: 40px;
+    width: 200px;
+    position: relative;
+    left: 42%;
+}
+i{
+    position: absolute;
+    top: 230px;
+    right: 470px;
+    cursor: pointer;
+    /* align-self: center; */
+}

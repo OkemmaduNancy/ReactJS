@@ -1,37 +1,16 @@
 .Card{
     width: 350px;
     height: 350px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-radius: 5px;
     border: 2px solid rgb(243, 242, 242);
+    background-color: white;
 }
-.img1 {
-  padding-left: 30px;
-  width: "200px";
-  height: 200px;
-}
-.img2 {
-  padding-left: 30px;
-  width: "200px";
-  height: 200px;
-}
-.img3 {
-  padding-left: 30px;
-  width: "200px";
-  height: 200px;
-}
-.img4 {
-  padding-left: 30px;
-  width: "200px";
-  height: 200px;
-}
-.img5 {
-  padding-left: 30px;
-  width: "200px";
-  height: 200px;
-}
-.img6 {
+
+.image {
   padding-left: 30px;
   width: "200px";
   height: 200px;
@@ -39,7 +18,7 @@
 /* p{
   margin-left: 0px;
 } */
- .btn{
+ .card_button{
    text-align: center;
    background-color: rgb(217, 217, 220);
    border-radius: 5px;

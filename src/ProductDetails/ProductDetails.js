@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-// import Checkout from "../ButtonClick";
 import { useHistory } from 'react-router-dom';
 
 import classes from "./ProductDetails.module.css";
 
 const ProductDetails = (props) => {
-  // const [showcheckout, setCheckout] = useState(false);
   const history = useHistory();
 
   const colorOptions = props.data.colorOptions.map((item, pos) => {
@@ -43,10 +41,6 @@ const ProductDetails = (props) => {
   });
 
   return (
-    // <>
-    //   {showcheckout ? (
-    //     <Checkout clickbtn={setCheckout} />
-    //   ) : (
     <div className={classes.ProductData}>
       <h1 className={classes.ProductTitle}>{props.data.title}</h1>
       <p className={classes.ProductDescription}>{props.data.description}</p>
@@ -59,9 +53,7 @@ const ProductDetails = (props) => {
 
       <button onClick={() => history.push("/store")} className={classes.PrimaryButton}>Buy Now</button>
     </div>
-    //   )}            <button onClick={() => history.push("/about-us")} type="submit">Submit</button>
 
-    // </>
   );
 };
 
