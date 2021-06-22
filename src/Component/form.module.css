@@ -16,19 +16,10 @@ h2{
     grid-template-columns: 250px 250px ;
     grid-template-rows:  100px 100px ;
 }
-/* @media only screen and (max-width: 600px)  {
-        .Form {
-          display: grid;
-          grid-template-rows:  100px 100px ;
-        }
-      
-    } */
-
 input:hover {
     border-radius: 5px;
     background-color: rgb(244, 244, 244);
 }
-
 .form_button{
     margin-top: 20px;
     width: 200px;

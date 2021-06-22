@@ -12,18 +12,9 @@ const Sign = () => {
 
   const [passwordShown, setPasswordShown] = useState(false);
   const [isConfirmPwd, setConfirmPwd] = useState("");
+  const [userInput, setUserInput] = useState({})
 
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
-  const [age, setAge] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
-  const [uploadPhoto, setUploadPhoto] = useState("");
-  const [gender, setGender] = useState("");
-  const [maritalStatus, setMaritalStatus] = useState("");
-  const [country, setCountry] = useState("");
-  const [job, setJob] = useState("");
+  console.log(userInput);
 
   const togglePasswordVisiblity = () => {
     const isPassword = passwordShown ? false : true
@@ -32,96 +23,43 @@ const Sign = () => {
 
   const passwordConfirm = (e) => {
     // const isConfirm = isConfirmPwd ? false : true
-    const checkPassword = e.target.value === password
+    const checkPassword = e.target.value === isConfirmPwd
     setConfirmPwd(checkPassword ? <h3 style={{ color: 'green' }}>{"password matched"}</h3> : <h3 style={{ color: 'red' }}>{"password did not match"}</h3>);
     console.log(checkPassword);
   };
 
-  const handleSubmit = e => {
-    const user = {
-      fname: firstname,
-      lname: lastname,
-      password: password,
-      email: email,
-      age: age,
-      dateOfBirth: dateOfBirth,
-      uploadPhoto: uploadPhoto,
-      gender: gender,
-      maritalStatus: maritalStatus,
-      country: country,
-      job: job
-
-    }
-    console.log(user);
-  };
-
-  const handleFirstName = e => {
-    setFirstName(e.target.value)
-  };
-  const handleLastName = e => {
-    setLastName(e.target.value)
-  };
-  const handleAge = e => {
-    setAge(e.target.value)
-  };
-  const handleEmail = e => {
-    setEmail(e.target.value)
-  };
-  const handlePassword = e => {
-    setPassword(e.target.value)
-  };
-  const handleDateOfBirth = e => {
-    setDateOfBirth(e.target.value)
-  };
-  const handleUpload = e => {
-    setUploadPhoto(e.target.value)
-  };
-  const handleGender = e => {
-    setGender(e.target.value)
-  };
-  const handleMaritalStatus = e => {
-    setMaritalStatus(e.target.value)
-  };
-  const handleCountry = e => {
-    setCountry(e.target.value)
-  };
-  const handleJob = e => {
-    setJob(e.target.value)
-  };
-
-
-
-
-  // useEffect(() => {
-  //   passwordConfirm()
-  // }, [])
+  const handleInputChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setUserInput({ ...userInput, [name]: value })
+  }
 
   return (
     <div>
       <h1 className={classes.signUp} >Sign Up</h1>
 
-      <form onSubmit={handleSubmit} />
+      <form onSubmit={handleInputChange} />
       <fieldset className={classes.fieldset1}>
 
         <div className={classes.signUp_form}>
           First Name:
-            <input onChange={handleFirstName} type="text" value={firstname} />
+          <input onChange={handleInputChange} type="text" />
         </div>
         <div className={classes.signUp_form}>
           Last Name:
-            <input onChange={handleLastName} type="text" value={lastname} />
+          <input onChange={handleInputChange} type="text" />
         </div>
         <div className={classes.signUp_form}>
           Age:
-            <input onChange={handleAge} type="number" value={age} />
+          <input onChange={handleInputChange} type="number" />
         </div>
         <div className={classes.signUp_form}>
           Email:
-            <input onChange={handleEmail} type="email" value={email} />
+          <input onChange={handleInputChange} type="email" />
         </div>
         <div className={classes.signUp_form}>
           Password:
-            <input onChange={handlePassword} type={passwordShown ? "text" : "password"} value={password}
+          <input onChange={handleInputChange} type={passwordShown ? "text" : "password"}
             name="password" />
           <i onClick={togglePasswordVisiblity}>{passwordShown ? eye : eyeSlash}</i>
         </div>
@@ -132,25 +70,25 @@ const Sign = () => {
         </div>
         <div className={classes.signUp_form}>
           Date of Birth:
-            <input onChange={handleDateOfBirth} type="date" value={dateOfBirth} />
+          <input onChange={handleInputChange} type="date" />
         </div>
 
         <div className={classes.signUp_form}>
           <div className={classes.file}>
             Upload Photo:
-            <input onChange={handleUpload} type="file" value={uploadPhoto} />
+            <input onChange={handleInputChange} type="file" />
           </div>
         </div>
         <div className={classes.signUp_form}>
           Gender:{" "}
-          <select onChange={handleGender} id="mySelect" value={gender}>
+          <select onChange={handleInputChange} id="mySelect" >
             <option>Male</option>
             <option>Female</option>
           </select>
         </div>
         <div className={classes.signUp_form}>
           Marital Status:{" "}
-          <select onChange={handleMaritalStatus} id="mySelect" value={maritalStatus}>
+          <select onChange={handleInputChange} id="mySelect" >
             <option>Married</option>
             <option>Single</option>
             <option>Engaged</option>
@@ -158,7 +96,7 @@ const Sign = () => {
         </div>
         <div className={classes.signUp_form}>
           Country:{" "}
-          <select onChange={handleCountry} id="mySelect" value={country}>
+          <select onChange={handleInputChange} id="mySelect" >
             <option>America</option>
             <option>Califonia</option>
             <option>Nigeria</option>
@@ -167,7 +105,7 @@ const Sign = () => {
         </div>
         <div className={classes.signUp_form}>
           Job:{" "}
-          <select onChange={handleJob} id="mySelect" value={job}>
+          <select onChange={handleInputChange} id="mySelect" >
             <option>Employed</option>
             <option>Unemployed</option>
             <option>Self Employed</option>
@@ -175,7 +113,7 @@ const Sign = () => {
           </select>
         </div>
       </fieldset >
-      <button className={classes.signUp_button} type="submit" onClick={handleSubmit}>Submit</button>
+      <button className={classes.signUp_button} type="submit" onClick={handleInputChange}>Submit</button>
       <form />
     </div >
   );

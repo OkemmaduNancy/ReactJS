@@ -5,9 +5,7 @@ import Navbar from "./Nav/RightNav";
 import { data } from "./data";
 import Checkbox from "./Nav/Checkbox";
 import Burger from "./Nav/Burger";
-
-
-
+import { BASE_URL } from './Constant';
 
 const Nav = () => {
   return (
@@ -25,7 +23,7 @@ const Store = () => {
 
   async function getProduct() {
     try {
-      const result = await fetch('http://localhost:4000/v1/product/all')
+      const result = await fetch(`${BASE_URL}/product/all`)
       if (result.status > 300) {
         alert("Error occured")
       }
