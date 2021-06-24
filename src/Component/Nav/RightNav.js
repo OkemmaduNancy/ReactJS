@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Checkbox from './Checkbox';
+import Burger from './Burger';
 
 const Nav = styled.nav`
-
     background-color: #fff;
     padding: 5px;
     position: fixed;
@@ -12,6 +11,7 @@ const Nav = styled.nav`
     border-bottom: 2px solid lightblue;
     display: flex;
     justify-content: space-between;
+
     .right_header{
     display: flex;
     justify-content: space-between;
@@ -46,22 +46,20 @@ const Nav = styled.nav`
   }
 `
 
-const Navbar = () => {
+const RightNav = () => {
   return (
-    <Nav>
-      <Checkbox />
-
+    <Nav >
+      <Burger />
       <nav >
         <div className="right_header">
           <h3 className="docs">DOCS</h3>
           <h3 className="pres">Presentation</h3>
           <button className="signIn" type="submit" >Sing In</button>
           <button className="logIn" type="submit">Log In</button>
-
         </div>
       </nav>
     </Nav>
   );
 };
 
-export default Navbar
+export default RightNav

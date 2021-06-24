@@ -1,6 +1,8 @@
 import React from "react"
 import { useHistory } from "react-router";
-import classes from './form.module.css'
+import classes from './form.module.css';
+import { BASE_URL } from './Constant';
+
 const Form = () => {
 
     const history = useHistory();
@@ -16,7 +18,7 @@ const Form = () => {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:4000/v1/product/create', {
+            const response = await fetch(`${BASE_URL}/product/create`, {
                 method: 'Post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -41,27 +43,27 @@ const Form = () => {
                 <fieldset className={classes.Form}>
                     <label className={classes.label1}>
                         Name:
-          <input name="name" onChange={handleChange} />
+                        <input name="name" onChange={handleChange} />
                     </label>
                     <label className={classes.label1}>
                         Quantity:
-          <input name="quantity" onChange={handleChange} />
+                        <input name="quantity" onChange={handleChange} />
                     </label>
                     <label className={classes.label1}>
                         Price:
-          <input name="price" onChange={handleChange} />
+                        <input name="price" onChange={handleChange} />
                     </label>
                     <label className={classes.label1}>
                         Description:
-          <input name="description" onChange={handleChange} />
+                        <input name="description" onChange={handleChange} />
                     </label>
                     <label className={classes.label1}>
                         Color:
-          <input name="color" onChange={handleChange} />
+                        <input name="color" onChange={handleChange} />
                     </label>
                     <label className={classes.label1}>
                         Categories:
-          <input name="categories" onChange={handleChange} />
+                        <input name="categories" onChange={handleChange} />
                     </label>
                 </fieldset>
                 <button className={classes.form_button} onClick={() => history.push("/store")} type="submit">Submit</button>

@@ -11,15 +11,12 @@
     grid-template-columns: 200px 200px 200px; 
     grid-template-rows: 100px 100px; 
     box-shadow: 0 10px 20px rgba(0,0,0,0.19);    
-  
-
 }
 .signUp_form{
     margin: 50px;
     margin-bottom: 50px;
     justify-self: center;
     grid-row-gap: 10px;
-
 } 
 .file{
     margin-left: 100px;
@@ -34,10 +31,9 @@
     position: relative;
     left: 42%;
 }
-i{
+i {
     position: absolute;
     top: 230px;
     right: 470px;
     cursor: pointer;
-    /* align-self: center; */
 }

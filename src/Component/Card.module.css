@@ -9,15 +9,11 @@
     border: 2px solid rgb(243, 242, 242);
     background-color: white;
 }
-
 .image {
   padding-left: 30px;
   width: "200px";
   height: 200px;
 }
-/* p{
-  margin-left: 0px;
-} */
  .card_button{
    text-align: center;
    background-color: rgb(217, 217, 220);
