@@ -10,4 +10,3 @@ export const dumplogs = (message) =>{
     console.log(message);
 }
 
-// export{isArrayEmpty, dumplogs}

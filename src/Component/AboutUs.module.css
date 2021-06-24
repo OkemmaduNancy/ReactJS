@@ -2,9 +2,9 @@
     background-color: gray;
     text-align: center;
     padding: 20px;
-    
+    margin-left: 0px;
 }
-.button{
+.readMoreButton{
     background-color:lime;
     padding: 5px;
     border-radius: 5px;

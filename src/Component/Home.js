@@ -1,5 +1,4 @@
 import React from "react";
-// import classes from "./"
 const Navbar = () => {
   return (
     <ul>
@@ -15,7 +14,7 @@ const Navbar = () => {
       </p>
       <p>
         <li>
-          <a href="contact-us">Contact Us</a>
+          <a href="sign-up">Sign Up</a>
         </li>
       </p>
       <li>

@@ -21,7 +21,6 @@ class API extends Component {
         }
     }
     render() {
-        // this.state.newData.map((item, index) => console.log(<h1 key={index}>{item.price}</h1>))
         return (
             <div>
                 { this.state.newData.map((item, index) => <h1 key={index}>{item.price}</h1>)}
@@ -32,12 +31,3 @@ class API extends Component {
 
 export default API;
 
-// class MyHa extends Component {
-//     render() {
-//         return <>
-//             <h1>eric</h1>
-//             <h1>eric</h1>
-//             <h1>eric</h1>
-//         </>
-//     }
-// }

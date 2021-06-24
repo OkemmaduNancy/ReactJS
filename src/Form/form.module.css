@@ -1,0 +1,38 @@
+h2{
+    text-align: center;
+}
+.label1{
+     margin: 50px;
+    margin-bottom: 50px;
+}
+.Form{
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19);    
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 500px;
+    display: grid;
+    justify-content: center; 
+    grid-template-columns: 250px 250px ;
+    grid-template-rows:  100px 100px ;
+}
+/* @media only screen and (max-width: 600px)  {
+        .Form {
+          display: grid;
+          grid-template-rows:  100px 100px ;
+        }
+      
+    } */
+
+input:hover {
+    border-radius: 5px;
+    background-color: rgb(244, 244, 244);
+}
+
+.form_button{
+    margin-top: 20px;
+    width: 200px;
+    position: relative;
+    left: 42%;
+}
+

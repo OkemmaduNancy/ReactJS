@@ -1,23 +1,26 @@
-.Store {
+
+.storeDiv {
   display: flex;
   justify-content: center;
+  background-color: rgb(230, 229, 229);
 }
 
-.Store input {
+.siteInput {
   width: 350px;
   height: 35px;
-  margin-top: 20px;
+  margin-top: 55px;
   border-radius: 50px;
   border-color: rgba(223, 222, 222, 0.822);
 }
-.Store label {
-  margin-top: 30px;
+.siteLabel {
+  margin-top: 55px;
   margin-right: 20px;
   font-size: 20px;
 }
-.Store button {
-  margin-top: 25px;
+.storeButton {
   margin-left: 25px;
+  margin-top: 55px;
+  margin-bottom: 10px;
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -28,5 +31,5 @@
 .Card{
    display: grid; 
   grid-template-columns: 400px 400px 400px;
-  /*grid-template-rows: 350px 350px 350px; */ 
+  background-color: rgb(230, 229, 229);
 }

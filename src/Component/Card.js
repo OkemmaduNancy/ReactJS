@@ -1,14 +1,15 @@
 import React from "react";
 import { Button, message } from 'antd';
 import classes from "./Card.module.css";
+import { Link } from "react-router-dom";
 
-const Card = ({ imageUrl, description, id, btn }) => {
+const Card = ({ imageUrl, description, id, card_button }) => {
   const [error, seterror] = React.useState("")
-  const classname = id === '1' ? classes.img1 :
-    id === '2' ? classes.img2 :
-      id === '3' ? classes.img3 :
-        id === '4' ? classes.img4 :
-          id === '5' ? classes.img5 : classes.img6
+  // const classname = id === '1' ? classes.img1 :
+  //   id === '2' ? classes.img2 :
+  //     id === '3' ? classes.img3 :
+  //       id === '4' ? classes.img4 :
+  //         id === '5' ? classes.img5 : classes.img6
   const handledelete = async () => {
     try {
       const result = await fetch(`http://localhost:4000/v1/product/${id}`, {
@@ -18,7 +19,7 @@ const Card = ({ imageUrl, description, id, btn }) => {
 
       const data = await result.json()
       message.success({
-        content: "Product Delete Succesfully",
+        content: "Product Deleted Succesfully",
         style: {
           marginTop: '10vh',
         },
@@ -32,12 +33,16 @@ const Card = ({ imageUrl, description, id, btn }) => {
 
   return (
     <div className={classes.Card}>
-      <img src={imageUrl} className={classname} />
-      <button>{btn}</button>
+      <Link to={`/product/${id}`}>
+        <img className={classes.image} src={imageUrl} />
+        <div>{description}</div>
+      </Link>
+      <button>{card_button}</button>
       <Button type="primary" onClick={() => handledelete(id)}>delete</Button>
-      <p>{description}</p>
+
     </div>
   );
 }
 
 export default Card;
+// className={classname}
