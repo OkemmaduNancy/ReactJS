@@ -1,18 +1,18 @@
-// import React from 'react'
-// import OverlayLoader from 'react-loading-overlay'
-// import Routes from './Router'
+import React from 'react'
+import OverlayLoader from 'react-loading-overlay'
 
-// const MyLoader {
+const Loader = () => {
 
-//     return (
-//         <OverlayLoader
-//         color={'red'}
-//         laoder="ScaleLoader"
-//         text="Laoding..Please wait!"
-//         active={true}
-//         backgroundColor={'black'}
-//         opacity=".4"
-//         spinner timeout={1000}>
-//     </OverlayLoader> 
-//     )
-// }
+    <OverlayLoader
+        color={'red'}
+        laoder="ScaleLoader"
+        text="Laoding..Please wait!"
+        active={true}
+        backgroundColor={'black'}
+        opacity=".4"
+        spinner timeout={1000}>
+    </OverlayLoader>
+
+};
+
+export default Loader;

@@ -1,8 +1,19 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import Burger from './Burger';
 
-const Dropdown = styled.div`
+const Nav = styled.nav`
+    width: 100%;
+  height: 60px;
+  border-bottom: 2px solid #f1f1f1;
+  padding: 0 20px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background-color:#fff;
+  z-index: 11;
+
 .checkbox{
     border-radius: 5px;
     border-color: rgb(203, 201, 201);
@@ -19,12 +30,10 @@ const Dropdown = styled.div`
   }
 `
 
-const Checkbox = () => {
+const Navbar = () => {
     const history = useHistory();
     return (
-        <Dropdown>
-
-
+        <Nav>
             <div>
                 <select className="checkbox" >
                     <option>Reference</option>
@@ -33,8 +42,9 @@ const Checkbox = () => {
                 </select>
                 <button onClick={() => history.push("/about-us")} className="aboutUsButton">About Us</button>
             </div>
-        </Dropdown>
+            <Burger />
+        </Nav>
     )
 }
 
-export default Checkbox;
+export default Navbar;

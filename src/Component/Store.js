@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Store.module.css";
 import Card from "./Card";
-import Navbar from "./Nav/RightNav";
-import { data } from "./data";
-import Checkbox from "./Nav/Checkbox";
-import Burger from "./Nav/Burger";
+// import RightNav from "./Nav/RightNav";
+import Navbar from "./Nav/Navbar";
+// import Burger from "./Nav/Burger";
 import { BASE_URL } from './Constant';
 
 const Nav = () => {
@@ -41,8 +40,8 @@ const Store = () => {
   return (
     <div className={classes.bodyStore}>
       <Navbar />
-      <Burger />
-      <Checkbox />
+      {/* <RightNav /> */}
+      {/* <Burger /> */}
       <Nav />
       <a className={classes.Card}>
         {productsInfo.map(({ imageUrl, description, name, _id, }) => (
