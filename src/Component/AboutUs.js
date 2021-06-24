@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./AboutUs.module.css";
 import { useHistory } from "react-router-dom";
+import Loader from "../Overlay";
 
 const AboutUs = () => {
   const history = useHistory();
 
-  return (
+  const [isLoader, setLoader] = useState(false)
+  const [error, seterror] = useState("")
+
+
+  async function getLoading() {
+    setLoader(true)
+    try {
+
+    } catch (error) {
+      seterror({ error: error.message })
+
+    }
+  }
+  useEffect(() => {
+    getLoading()
+  }, [])
+  return (isLoader ? < Loader /> :
     <div>
       <h1 className={classes.AboutUs}>About Us</h1>
       <p>

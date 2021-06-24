@@ -1,21 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Burger from './Burger';
 
-const Nav = styled.nav`
-    background-color: #fff;
-    padding: 5px;
-    position: fixed;
-    z-index: 11;
-    width: 100%;
-    border-bottom: 2px solid lightblue;
-    display: flex;
-    justify-content: space-between;
+const Ul = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
 
-    .right_header{
-    display: flex;
-    justify-content: space-between;
- }
  .pres{
    margin-left: 10px;
    margin-top:10px;
@@ -28,8 +18,7 @@ const Nav = styled.nav`
     padding-top: 3px;
     border-radius: 10px;
     border-color: rgb(234, 231, 231);
-    margin:10px;
-
+    margin: 5px;
   }
   .signIn:hover{
   background-color: rgb(0, 255, 115);  
@@ -38,27 +27,42 @@ const Nav = styled.nav`
     padding-top: 3px;
     border-radius: 10px;
     border-color: rgb(227, 223, 223);
-    margin:10px;
+    margin: 5px;
   }
   .logIn:hover{
   background-color: rgb(0, 255, 115);
   
   }
+
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+    background-color: #0D2538;
+    position: fixed;
+    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    padding-top: 3.5rem;
+    transition: transform 0.3s ease-in-out;
+
+    .docs{
+      color:#fff;
+     }
+     .pres{
+      color: #fff;
+ }
+  }
 `
 
-const RightNav = () => {
+const RightNav = ({ open }) => {
   return (
-    <Nav >
-      <Burger />
-      <nav >
-        <div className="right_header">
+    <Ul open={open} className="right_header">
           <h3 className="docs">DOCS</h3>
           <h3 className="pres">Presentation</h3>
           <button className="signIn" type="submit" >Sing In</button>
           <button className="logIn" type="submit">Log In</button>
-        </div>
-      </nav>
-    </Nav>
+    </Ul>
   );
 };
 

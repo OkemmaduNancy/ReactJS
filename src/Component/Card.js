@@ -7,11 +7,6 @@ import { BASE_URL } from './Constant';
 
 const Card = ({ imageUrl, description, id, card_button }) => {
   const [error, seterror] = React.useState("")
-  // const classname = id === '1' ? classes.img1 :
-  //   id === '2' ? classes.img2 :
-  //     id === '3' ? classes.img3 :
-  //       id === '4' ? classes.img4 :
-  //         id === '5' ? classes.img5 : classes.img6
   const handledelete = async () => {
     try {
       const result = await fetch(`${BASE_URL}/product/${id}`, {
