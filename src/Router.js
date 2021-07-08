@@ -9,12 +9,13 @@ import Store from "./Component/Store";
 import AboutUs from "./Component/AboutUs";
 import SignUp from "./Component/SignUp";
 import ProductDetails from "./Component/ProductDetails";
-import Loader from "./Overlay";
+// import { Loader } from "./Overlay";
+
 class Routes extends Component {
   render() {
     return (
       <Router>
-        <Suspense fallback={Loader}>
+        <Suspense >
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/form" component={Form} />
