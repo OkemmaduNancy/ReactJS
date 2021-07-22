@@ -1,14 +1,11 @@
 import React from 'react';
-
 import classes from './ProductPreview.module.css';
-
 
 const ProductPreview = (props) => {
 
     const d = new Date()
     const hour = d.getHours()
     const mins = d.getMinutes()
-
 
     return (
         <div className={classes.ProductPreview}>
@@ -18,7 +15,7 @@ const ProductPreview = (props) => {
             {
                 props.currentSelectedFeature === 1 ?
                     <div className={classes.HeartBeatSection}>
-                        <i className="fas fa-heartbeat" ></i>
+                        <i class="fas fa-heart"></i>
                         <p>70</p>
                     </div>
                     :

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./SignUp.module.css";
-import { useHistory } from 'react-router-dom';
-import { message } from 'antd';
+import { message, Select } from 'antd';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { BASE_URL } from './Constant';
+import { BASE_URL, INPUTS_FIELDS } from './Constant';
+
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
@@ -51,26 +51,20 @@ const Sign = () => {
   return (
     <div>
       <h1 className={classes.signUp} >Sign Up</h1>
-
       <form onSubmit={handleSubmit} >
         <fieldset className={classes.fieldset1}>
-
-          <div className={classes.signUp_form}>
-            First Name:
-            <input name="firstname" onChange={handleInputChange} type="text" />
+          {INPUTS_FIELDS.map(input => <div className={classes.signUp_form}>
+            {input.label}
+            {input.type === "select" ?
+              <select name={input.name} onChange={handleInputChange} type={input.type} >
+                {input.options.map(item => <option value={item}>
+                  {item}
+                </option>)}
+              </select> :
+              <input name={input.name} onChange={handleInputChange} type={input.type} />
+            }
           </div>
-          <div className={classes.signUp_form}>
-            Last Name:
-            <input name="lastname" onChange={handleInputChange} type="text" />
-          </div>
-          <div className={classes.signUp_form}>
-            Age:
-            <input name="age" onChange={handleInputChange} type="number" />
-          </div>
-          <div className={classes.signUp_form}>
-            Email:
-            <input name="email" onChange={handleInputChange} type="email" />
-          </div>
+          )}
           <div className={classes.signUp_form}>
             Password:
             <input name="password" onChange={handleInputChange} type={passwordShown ? "text" : "password"} />
@@ -80,50 +74,6 @@ const Sign = () => {
             Confirm password:
             <input name="Comfirmpassword" onChange={passwordConfirm} type={passwordShown ? "text" : "password"} />
             <sub>{isConfirmPwd}</sub>
-          </div>
-          <div className={classes.signUp_form}>
-            Date of Birth:
-            <input name="date_of_birth" onChange={handleInputChange} type="date" />
-          </div>
-
-          <div className={classes.signUp_form}>
-            <div className={classes.file}>
-              Upload Photo:
-              <input name="upload_photo" onChange={handleInputChange} type="file" />
-            </div>
-          </div>
-          <div className={classes.signUp_form}>
-            Gender:{" "}
-            <select name="gender" onChange={handleInputChange} id="mySelect" >
-              <option>Male</option>
-              <option>Female</option>
-            </select>
-          </div>
-          <div className={classes.signUp_form}>
-            Marital Status:{" "}
-            <select name="marita_status" onChange={handleInputChange} id="mySelect" >
-              <option>Married</option>
-              <option>Single</option>
-              <option>Engaged</option>
-            </select>
-          </div>
-          <div className={classes.signUp_form}>
-            Country:{" "}
-            <select name="country" onChange={handleInputChange} id="mySelect" >
-              <option>America</option>
-              <option>Califonia</option>
-              <option>Nigeria</option>
-              <option>Canada</option>
-            </select>
-          </div>
-          <div className={classes.signUp_form}>
-            Job:{" "}
-            <select name="job" onChange={handleInputChange} id="mySelect" >
-              <option>Employed</option>
-              <option>Unemployed</option>
-              <option>Self Employed</option>
-              <option>Student</option>
-            </select>
           </div>
         </fieldset >
         <button className={classes.signUp_button} type="submit" >Submit</button>
