@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Store.module.css";
 import Card from "./Card";
-// import RightNav from "./Nav/RightNav";
 import Navbar from "./Nav/Navbar";
-// import Burger from "./Nav/Burger";
 import { BASE_URL } from './Constant';
 
 const Nav = () => {
@@ -40,8 +38,6 @@ const Store = () => {
   return (
     <div className={classes.bodyStore}>
       <Navbar />
-      {/* <RightNav /> */}
-      {/* <Burger /> */}
       <Nav />
       <a className={classes.Card}>
         {productsInfo.map(({ imageUrl, description, name, _id, }) => (

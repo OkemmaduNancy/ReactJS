@@ -1,11 +1,8 @@
 import React from "react"
-import { useHistory } from "react-router";
 import classes from './form.module.css';
 import { BASE_URL } from './Constant';
 
 const Form = () => {
-
-    const history = useHistory();
 
     const [formData, updateFormData] = React.useState({});
     const [error, seterror] = React.useState("")
@@ -23,14 +20,12 @@ const Form = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             })
-            console.log(response);
             const data = await response.json()
 
         } catch (error) {
             seterror({ error: error.message })
         }
     };
-
 
     React.useEffect(() => {
         console.log(error);
@@ -66,7 +61,7 @@ const Form = () => {
                         <input name="categories" onChange={handleChange} />
                     </label>
                 </fieldset>
-                <button className={classes.form_button} onClick={() => history.push("/store")} type="submit">Submit</button>
+                <button className={classes.form_button} type="submit">Submit</button>
             </form>
         </div>
     );

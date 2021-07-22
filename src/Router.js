@@ -1,6 +1,4 @@
 import { Component, Suspense } from "react";
-// import OverlayLoader from "react-loading-overlay"
-// import Loader from "react-loader-spinner";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "./App";
 import Form from "./Component/Form";
@@ -9,12 +7,12 @@ import Store from "./Component/Store";
 import AboutUs from "./Component/AboutUs";
 import SignUp from "./Component/SignUp";
 import ProductDetails from "./Component/ProductDetails";
-import Loader from "./Overlay";
+
 class Routes extends Component {
   render() {
     return (
       <Router>
-        <Suspense fallback={Loader}>
+        <Suspense >
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/form" component={Form} />
