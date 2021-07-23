@@ -21,6 +21,20 @@
 .signUp{
     text-align: center;
 }
+.file{
+    margin-bottom: 35px;
+    margin-left: 20px;
+}
+.password{
+    margin-bottom: 35px;
+    margin-left: 20px;
+
+}
+.passwordConfirm{
+    margin-bottom: 35px;
+    margin-left: 20px;
+
+}
 .signUp_button{
     margin-bottom: 40px;
     width: 200px;

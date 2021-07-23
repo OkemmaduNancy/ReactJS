@@ -17,9 +17,7 @@ const Card = ({ imageUrl, description, id, card_button }) => {
       const data = await result.json()
       message.success({
         content: "Product Deleted Succesfully",
-        style: {
-          marginTop: '10vh',
-        },
+
       });
     }
     catch (error) {

@@ -60,7 +60,7 @@ const RightNav = ({ open }) => {
     <Ul open={open} className="right_header">
           <h3 className="docs">DOCS</h3>
           <h3 className="pres">Presentation</h3>
-          <button className="signIn" type="submit" >Sing In</button>
+      <button className="signIn" type="submit" >Sign Up</button>
           <button className="logIn" type="submit">Log In</button>
     </Ul>
   );

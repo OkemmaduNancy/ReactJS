@@ -65,12 +65,16 @@ const Sign = () => {
             }
           </div>
           )}
-          <div className={classes.signUp_form}>
+          <div className={classes.file}>
+            Upload Photo:
+            <input name="upload_photo" onChange={handleInputChange} type="file" />
+          </div>
+          <div className={classes.password}>
             Password:
             <input name="password" onChange={handleInputChange} type={passwordShown ? "text" : "password"} />
             <i onClick={() => setPasswordShown(!passwordShown)}>{passwordShown ? eye : eyeSlash}</i>
           </div>
-          <div className={classes.signUp_form}>
+          <div className={classes.passwordConfirm}>
             Confirm password:
             <input name="Comfirmpassword" onChange={passwordConfirm} type={passwordShown ? "text" : "password"} />
             <sub>{isConfirmPwd}</sub>

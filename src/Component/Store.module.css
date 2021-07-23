@@ -4,6 +4,7 @@
   background-color: rgb(230, 229, 229);
 }
 
+  
 .siteInput {
   width: 350px;
   height: 35px;
@@ -32,4 +33,10 @@
   grid-template-columns: 400px 400px 400px;
   background-color: rgb(230, 229, 229);
 }
+@media only screen and (max-width: 800px){
+  .Card{
+    justify-content: center;
+    grid-template-columns: 400px;
+}
+  }
 

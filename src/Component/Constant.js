@@ -14,7 +14,7 @@ export const INPUTS_FIELDS = [
     { label: "Age:", name: "age", type: "number" },
     { label: "Email:", name: "email", type: "email" },
     { label: "Date of Birth:", name: " date of birth", type: "date" },
-    { label: "Upload Photo:", name: "upload photo", type: "file" },
+    // { label: "Upload Photo:", name: "upload photo", type: "file" },
     {
         label: "Marital Status:", name: "marital Status:", type: "select", options: ["Married", "Single", "Engaged"]
     },
