@@ -9,23 +9,22 @@ export const PARAGRAPH = [
 ]
 export const INPUTS_FIELDS = [
 
-    { label: "First Name:", name: "firstname", type: "text" },
-    { label: "Last Name:", name: "lastname", type: "text" },
-    { label: "Age:", name: "age", type: "number" },
-    { label: "Email:", name: "email", type: "email" },
-    { label: "Date of Birth:", name: " date of birth", type: "date" },
-    // { label: "Upload Photo:", name: "upload photo", type: "file" },
+    { label: "First Name:", name: "firstname", type: "text", required: true },
+    { label: "Last Name:", name: "lastname", type: "text", required: true },
+    { label: "Age:", name: "age", type: "number", required: true },
+    { label: "Email:", name: "email", type: "email", required: true },
+    { label: "Date of Birth:", name: "date_of_birth", type: "date", required: true },
     {
-        label: "Marital Status:", name: "marital Status:", type: "select", options: ["Married", "Single", "Engaged"]
+        label: "Marital Status:", name: "marital status:", type: "select", options: ["Married", "Single", "Engaged"], required: true
     },
     {
-        label: "Gender:", name: "gender:", type: "select", options: ["Male", "Female"]
+        label: "Gender:", name: "gender:", type: "select", options: ["Male", "Female"], required: true
     },
     {
-        label: "Country:", name: "country:", type: "select", options: ["Canada", "Califonia", "Nigeria", "Europe"]
+        label: "Country:", name: "country:", type: "select", options: ["Canada", "Califonia", "Nigeria", "Europe"], required: true
     },
     {
-        label: "Job:", name: "job:", type: "select", options: ["Employed", "Unemployed", "Selfemployed", "Student"]
+        label: "Job:", name: "job:", type: "select", options: ["Employed", "Unemployed", "Selfemployed", "Student"], required: true
     },
 
 ]

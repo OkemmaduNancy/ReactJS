@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import classes from "./SignUp.module.css";
-import { message, Select } from 'antd';
+import { message } from 'antd';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { BASE_URL, INPUTS_FIELDS } from './Constant';
-
+import { useHistory } from "react-router-dom";
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
 
 const Sign = () => {
+  const history = useHistory()
   const [passwordShown, setPasswordShown] = useState(false);
   const [isConfirmPwd, setConfirmPwd] = useState("");
   const [userInput, setUserInput] = useState({});
@@ -42,7 +43,10 @@ const Sign = () => {
         style: {
           marginTop: '10vh',
         },
+
       });
+      history.push('/login')
+
     } catch (error) {
       seterror({ error: error.message })
     }
@@ -51,7 +55,7 @@ const Sign = () => {
   return (
     <div>
       <h1 className={classes.signUp} >Sign Up</h1>
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit}>
         <fieldset className={classes.fieldset1}>
           {INPUTS_FIELDS.map(input => <div className={classes.signUp_form}>
             {input.label}
@@ -61,22 +65,23 @@ const Sign = () => {
                   {item}
                 </option>)}
               </select> :
-              <input name={input.name} onChange={handleInputChange} type={input.type} />
+              <input required={input.required} name={input.name} onChange={handleInputChange} type={input.type} />
             }
           </div>
           )}
           <div className={classes.file}>
             Upload Photo:
-            <input name="upload_photo" onChange={handleInputChange} type="file" />
+            <input required={true} name="upload_photo" onChange={handleInputChange} type="file" />
+
           </div>
           <div className={classes.password}>
             Password:
-            <input name="password" onChange={handleInputChange} type={passwordShown ? "text" : "password"} />
+            <input required={true} name="password" onChange={handleInputChange} type={passwordShown ? "text" : "password"} />
             <i onClick={() => setPasswordShown(!passwordShown)}>{passwordShown ? eye : eyeSlash}</i>
           </div>
           <div className={classes.passwordConfirm}>
             Confirm password:
-            <input name="Comfirmpassword" onChange={passwordConfirm} type={passwordShown ? "text" : "password"} />
+            <input required={true} name="Comfirmpassword" onChange={passwordConfirm} type={passwordShown ? "text" : "password"} />
             <sub>{isConfirmPwd}</sub>
           </div>
         </fieldset >

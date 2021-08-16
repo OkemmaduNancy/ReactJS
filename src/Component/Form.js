@@ -1,9 +1,10 @@
 import React from "react"
-import classes from './form.module.css';
+import classes from './Form.module.css';
 import { BASE_URL } from './Constant';
+import { useHistory } from "react-router-dom";
 
 const Form = () => {
-
+    const history = useHistory()
     const [formData, updateFormData] = React.useState({});
     const [error, seterror] = React.useState("")
 
@@ -20,6 +21,8 @@ const Form = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             })
+            alert("Sign up successful")
+            history.push('/')
             const data = await response.json()
 
         } catch (error) {
@@ -33,7 +36,7 @@ const Form = () => {
 
     return (
         <div className={classes.sign}>
-            <h2>Fill the form bellow</h2>
+            <h2>Form</h2>
             <form onSubmit={handleSubmit}>
                 <fieldset className={classes.Form}>
                     <label className={classes.label1}>

@@ -1,4 +1,6 @@
+import { message } from 'antd';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Ul = styled.ul`
@@ -14,7 +16,7 @@ const Ul = styled.ul`
  .docs{
     margin:10px
  }
-  .signIn{
+  /* .signIn{
     padding-top: 3px;
     border-radius: 10px;
     border-color: rgb(234, 231, 231);
@@ -22,7 +24,7 @@ const Ul = styled.ul`
   }
   .signIn:hover{
   background-color: rgb(0, 255, 115);  
-  }
+  } */
   .logIn{
     padding-top: 3px;
     border-radius: 10px;
@@ -56,12 +58,22 @@ const Ul = styled.ul`
 `
 
 const RightNav = ({ open }) => {
+  const history = useHistory()
+
+  const logout = () => {
+    message.success({
+      content: "You are logout ",
+      style: {
+        marginTop: '10vh',
+      },
+    }); history.push('/login')
+  }
   return (
     <Ul open={open} className="right_header">
           <h3 className="docs">DOCS</h3>
           <h3 className="pres">Presentation</h3>
-      <button className="signIn" type="submit" >Sign Up</button>
-          <button className="logIn" type="submit">Log In</button>
+      {/* <button className="signIn" type="submit" >Sign Up</button> */}
+      <button onClick={logout} className="logIn" type="submit">Logout</button>
     </Ul>
   );
 };
