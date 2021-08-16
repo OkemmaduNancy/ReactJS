@@ -4,6 +4,12 @@
     justify-content: space-around;   
    
  }   
+ @media only screen and (max-width: 800px){
+     .product{
+         display: grid;
+       
+     }
+ }
  .product img{
     width: 350px;
     height: 350px;

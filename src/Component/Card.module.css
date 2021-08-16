@@ -1,9 +1,9 @@
 .Card{
-    width: 350px;
-    height: 350px;
+    width: 330px;
+    height: 330px;
     padding-left: 30px;
     padding-right: 30px;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 30px;
     border-radius: 5px;
     border: 2px solid rgb(243, 242, 242);

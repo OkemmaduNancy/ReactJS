@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   background-color: rgb(230, 229, 229);
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
-
 .siteInput {
   width: 350px;
   height: 35px;
@@ -26,10 +27,16 @@
   border-color: rgba(92, 255, 198, 0.822);
   background-color: rgb(187, 179, 179);
 }
-
 .Card{
    display: grid; 
-  grid-template-columns: 400px 400px 400px;
-  background-color: rgb(230, 229, 229);
+   justify-content: center;
+   grid-template-columns: 350px 350px 350px;
+   background-color: rgb(230, 229, 229);
 }
+@media only screen and (max-width: 800px){
+  .Card{
+    justify-content: center;
+    grid-template-columns: 400px;
+}
+  }
 
