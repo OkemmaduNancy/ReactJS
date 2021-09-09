@@ -15,16 +15,16 @@ export const INPUTS_FIELDS = [
     { label: "Email:", name: "email", type: "email", required: true },
     { label: "Date of Birth:", name: "date_of_birth", type: "date", required: true },
     {
-        label: "Marital Status:", name: "marital status:", type: "select", options: ["Married", "Single", "Engaged"], required: true
+        label: "Marital Status:", name: "marita_status", type: "select", options: ["Married", "Single", "Engaged"], required: true
     },
     {
-        label: "Gender:", name: "gender:", type: "select", options: ["Male", "Female"], required: true
+        label: "Gender:", name: "gender", type: "select", options: ["Male", "Female"], required: true
     },
     {
-        label: "Country:", name: "country:", type: "select", options: ["Canada", "Califonia", "Nigeria", "Europe"], required: true
+        label: "Country:", name: "country", type: "select", options: ["Canada", "Califonia", "Nigeria", "Europe"], required: true
     },
     {
-        label: "Job:", name: "job:", type: "select", options: ["Employed", "Unemployed", "Selfemployed", "Student"], required: true
+        label: "Job:", name: "job", type: "select", options: ["Employed", "Unemployed", "Selfemployed", "Student"], required: true
     },
 
 ]

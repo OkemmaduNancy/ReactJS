@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from "./AboutUs.module.css";
-import { Button, Loadings } from 'antd';
+import { Button } from 'antd';
 import { PARAGRAPH } from "./Constant";
 
 class AboutUs extends React.Component {

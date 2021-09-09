@@ -2,6 +2,8 @@ import React from "react"
 import classes from './Form.module.css';
 import { BASE_URL } from './Constant';
 import { useHistory } from "react-router-dom";
+import { message } from "antd";
+import axios from "axios";
 
 const Form = () => {
     const history = useHistory()
@@ -16,12 +18,17 @@ const Form = () => {
         event.preventDefault();
 
         try {
-            const response = await fetch(`${BASE_URL}/product/create`, {
+            const response = await axios(`${BASE_URL}/product/create`, {
                 method: 'Post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             })
-            alert("Sign up successful")
+            message.success({
+                content: "You are succesfully login ",
+                style: {
+                    marginTop: '10vh',
+                },
+            });
             history.push('/')
             const data = await response.json()
 
