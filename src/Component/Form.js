@@ -1,12 +1,12 @@
 import React from "react"
-import { useHistory } from "react-router";
-import classes from './form.module.css';
+import classes from './Form.module.css';
 import { BASE_URL } from './Constant';
+import { useHistory } from "react-router-dom";
+import { message } from "antd";
+import axios from "axios";
 
 const Form = () => {
-
-    const history = useHistory();
-
+    const history = useHistory()
     const [formData, updateFormData] = React.useState({});
     const [error, seterror] = React.useState("")
 
@@ -18,12 +18,18 @@ const Form = () => {
         event.preventDefault();
 
         try {
-            const response = await fetch(`${BASE_URL}/product/create`, {
+            const response = await axios(`${BASE_URL}/product/create`, {
                 method: 'Post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             })
-            console.log(response);
+            message.success({
+                content: "You are succesfully login ",
+                style: {
+                    marginTop: '10vh',
+                },
+            });
+            history.push('/')
             const data = await response.json()
 
         } catch (error) {
@@ -31,14 +37,13 @@ const Form = () => {
         }
     };
 
-
     React.useEffect(() => {
         console.log(error);
     }, [error])
 
     return (
         <div className={classes.sign}>
-            <h2>Fill the form bellow</h2>
+            <h2>Form</h2>
             <form onSubmit={handleSubmit}>
                 <fieldset className={classes.Form}>
                     <label className={classes.label1}>
@@ -66,7 +71,7 @@ const Form = () => {
                         <input name="categories" onChange={handleChange} />
                     </label>
                 </fieldset>
-                <button className={classes.form_button} onClick={() => history.push("/store")} type="submit">Submit</button>
+                <button className={classes.form_button} type="submit">Submit</button>
             </form>
         </div>
     );

@@ -5,8 +5,6 @@ class API extends Component {
         newData: [],
         error: ""
     };
-
-
     async componentDidMount() {
         try {
             const result = await fetch('http://localhost:4000/v1/product/all')

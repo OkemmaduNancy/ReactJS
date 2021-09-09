@@ -5,8 +5,6 @@ import ProductDetails from "./ProductDetails/ProductDetails";
 import ProductPreview from "./ProductPreview/ProductPreview";
 import Topbar from "./Topbar/Topbar";
 
-
-
 class App extends Component {
   state = {
     ProductData: ProductData,
@@ -14,8 +12,6 @@ class App extends Component {
     currentPreviewImagePos: 0,
 
   };
-
-
   onColorOptionClick = (pos) => {
     this.setState({ currentPreviewImagePos: pos });
   };

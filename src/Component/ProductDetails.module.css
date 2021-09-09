@@ -4,6 +4,11 @@
     justify-content: space-around;   
    
  }   
+ @media only screen and (max-width: 800px){
+     .product{
+         display: grid;
+     }
+ }
  .product img{
     width: 350px;
     height: 350px;
@@ -12,16 +17,13 @@
     border-radius: 5px;
     border: 2px solid rgb(238, 239, 239);
 }
-
 .name{
     color:cornflowerblue;    
     text-align: center;
 }
-
 .price{
      text-align: center;
 }
-
 .cart{
     background-color: rgb(10, 145, 10);
     color: white;
@@ -31,7 +33,6 @@
     border-radius: 2px;
     cursor: pointer;
 } 
-
 .categories{
     margin: 0 auto;
     margin-top: 10px;
