@@ -13,6 +13,7 @@ const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
 const Sign = () => {
   const history = useHistory();
   const [passwordShown, setPasswordShown] = useState(false);
+  const [passwordSeen, setPasswordSeen] = useState(false);
   const [isConfirmPwd, setConfirmPwd] = useState("");
   const [userInput, setUserInput] = useState({});
   const [error, seterror] = useState("");
@@ -29,8 +30,8 @@ const Sign = () => {
     setUserInput({ ...userInput, [name]: value })
 
     const passwordRegex = {
-      'strong': /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*]).{8,10}$/,
-      'medium': /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/
+      'strong': /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,12}$/,
+      'medium': /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/
     };
 
     if (passwordRegex.medium.test(value)) {
@@ -42,9 +43,6 @@ const Sign = () => {
     } else {
       setpwdStrength(<h3 style={{ color: 'red' }}>{'Weak'}</h3>)
     }
-
-
-
   };
 
   const handleSubmit = async (e) => {
@@ -53,9 +51,12 @@ const Sign = () => {
     const data = JSON.stringify(userInput)
     const headers = { 'Content-Type': 'application/json' }
     try {
-      const response = await axios.post(`${BASE_URL}/signup/create`, data, { headers: headers })
+      const response = await axios.post(`${BASE_URL}/user/create`,
+        data,
+        { headers: headers }
+      )
 
-      const result = await response.data
+      await response.data
 
       message.success({
         content: "You are succesfully signed Up ",
@@ -84,7 +85,7 @@ const Sign = () => {
                   {item}
                 </option>)}
               </select> :
-              <input key={input.id} required={input.required} name={input.name} onChange={handleInputChange} type={input.type} />
+              <input key={input.id} required={input.required} name={input.name} type={input.type} />
             }
           </div>
           )}
@@ -96,13 +97,14 @@ const Sign = () => {
           <div className={classes.password}>
             Password:
             <input required={true} name="password" onChange={handleInputChange} type={passwordShown ? "text" : "password"} />
-            <i onClick={() => setPasswordShown(!passwordShown)}>{passwordShown ? eye : eyeSlash}</i>
+            <i className={classes.i_icon} onClick={() => setPasswordShown(!passwordShown)}>{passwordShown ? eye : eyeSlash}</i>
             <span >{pwdStrength}</span>
           </div>
 
           <div className={classes.passwordConfirm}>
             Confirm password:
-            <input required={true} name="Comfirmpassword" onChange={passwordConfirm} type={passwordShown ? "text" : "password"} />
+            <input required={true} name="Comfirmpassword" onChange={passwordConfirm} type={passwordSeen ? "text" : "password"} />
+            <i className={classes.i_icon2} onClick={() => setPasswordSeen(!passwordSeen)}>{passwordSeen ? eye : eyeSlash}</i>
             <span>{isConfirmPwd}</span>
           </div>
         </fieldset >

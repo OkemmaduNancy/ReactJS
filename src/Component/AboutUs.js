@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import classes from "./AboutUs.module.css";
 import { Button } from 'antd';
 import { PARAGRAPH } from "./Constant";
