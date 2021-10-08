@@ -39,12 +39,8 @@ const Login = () => {
             const userToken = jwt_decode(token)
             localStorage.setItem('token', token)
 
-            message.success({
-                content: "Succesfully Decrypted ",
-                style: {
-                    marginTop: '10vh',
-                },
-            });
+            const message = response.data.message
+
 
             history.push('/store')
         }
@@ -55,7 +51,6 @@ const Login = () => {
     };
 
     React.useEffect(() => {
-        console.log(error);
     }, [error])
 
     return (

@@ -14,7 +14,7 @@ const Card = ({ imageUrl, description, id, card_button }) => {
         headers: { 'Content-Type': 'application/json' },
       })
 
-      const data = await result.json()
+      await result.json()
       message.success({
         content: "Product Deleted Succesfully",
 
@@ -24,11 +24,13 @@ const Card = ({ imageUrl, description, id, card_button }) => {
       seterror({ error: error.message })
     }
   }
+  React.useEffect(() => {
+  }, [error])
 
   return (
     <div className={classes.Card}>
       <Link to={`/product/${id}`}>
-        <img className={classes.image} src={imageUrl} />
+        <img alt='' className={classes.image} src={imageUrl} />
         <div>{description}</div>
       </Link>
       <button>{card_button}</button>

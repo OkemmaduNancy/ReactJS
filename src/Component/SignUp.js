@@ -71,7 +71,8 @@ const Sign = () => {
       seterror({ error: error.message })
     }
   }
-
+  React.useEffect(() => {
+  }, [error])
   return (
     <div>
       <h1 className={classes.signUp} >Sign Up</h1>
@@ -85,7 +86,7 @@ const Sign = () => {
                   {item}
                 </option>)}
               </select> :
-              <input key={input.id} required={input.required} name={input.name} type={input.type} />
+              <input key={input.id} required={input.required} onChange={handleInputChange} name={input.name} type={input.type} />
             }
           </div>
           )}

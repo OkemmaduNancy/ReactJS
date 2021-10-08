@@ -30,7 +30,7 @@ const Form = () => {
                 },
             });
             history.push('/')
-            const data = await response.json()
+            await response.json()
 
         } catch (error) {
             seterror({ error: error.message })
@@ -38,7 +38,6 @@ const Form = () => {
     };
 
     React.useEffect(() => {
-        console.log(error);
     }, [error])
 
     return (
