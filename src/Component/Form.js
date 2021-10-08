@@ -17,12 +17,16 @@ const Form = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        const data = JSON.stringify(formData)
+        const headers = { 'Content-Type': 'application/json' }
         try {
-            const response = await axios(`${BASE_URL}/product/create`, {
-                method: 'Post',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            })
+            const response = await axios(`${BASE_URL}/product/create`,
+                data,
+                { headers: headers }
+            )
+
+            await response.data
+
             message.success({
                 content: "You are succesfully login ",
                 style: {
@@ -30,7 +34,7 @@ const Form = () => {
                 },
             });
             history.push('/')
-            await response.json()
+
 
         } catch (error) {
             seterror({ error: error.message })

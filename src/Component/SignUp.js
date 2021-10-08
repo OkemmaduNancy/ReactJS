@@ -56,10 +56,8 @@ const Sign = () => {
         { headers: headers }
       )
 
-      await response.data
-
       message.success({
-        content: "You are succesfully signed Up ",
+        content: response.data.message,
         style: {
           marginTop: '10vh',
         },

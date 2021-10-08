@@ -27,7 +27,6 @@ const Login = () => {
         event.preventDefault();
 
         const data = JSON.stringify(login)
-
         const headers = { 'Content-Type': 'application/json' }
         try {
             const response = await axios.post(`${BASE_URL}/user/login`,
@@ -39,7 +38,12 @@ const Login = () => {
             const userToken = jwt_decode(token)
             localStorage.setItem('token', token)
 
-            const message = response.data.message
+            message.success({
+                content: response.data.message,
+                style: {
+                    marginTop: '10vh',
+                },
+            });
 
             history.push('/store')
         }
