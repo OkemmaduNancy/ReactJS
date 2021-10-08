@@ -41,7 +41,6 @@ const Login = () => {
 
             const message = response.data.message
 
-
             history.push('/store')
         }
 
