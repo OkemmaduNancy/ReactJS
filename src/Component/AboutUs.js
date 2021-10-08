@@ -1,6 +1,7 @@
 import React from "react";
-import classes from "./AboutUs.module.css";
 import { Button } from 'antd';
+
+import classes from "./AboutUs.module.css";
 import { PARAGRAPH } from "./Constant";
 
 class AboutUs extends React.Component {

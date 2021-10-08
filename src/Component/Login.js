@@ -1,13 +1,14 @@
 import React from "react"
-import jwt_decode from "jwt-decode";
-import classes from './Login.module.css';
-import { BASE_URL } from './Constant';
-import { useHistory } from "react-router-dom";
-import { message } from "antd";
 import axios from "axios";
+import { message } from "antd";
+import jwt_decode from "jwt-decode";
+import { useHistory } from "react-router-dom";
+
+import { BASE_URL } from './Constant';
+import classes from './Login.module.css';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
@@ -33,16 +34,13 @@ const Login = () => {
                 data,
                 { headers: headers }
             )
-            console.log(response)
 
             const token = response.data.data.token
             const userToken = jwt_decode(token)
             localStorage.setItem('token', token)
 
-            console.log(userToken);
-
             message.success({
-                content: "You are succesfully logged in ",
+                content: "Succesfully Decrypted ",
                 style: {
                     marginTop: '10vh',
                 },
