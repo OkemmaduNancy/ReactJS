@@ -47,3 +47,17 @@
     border:1px solid rgba(128, 128, 128, 0.507);
     box-shadow:1px 1px 4px 1px rgb(197, 197, 197);
 }
+.icon{
+    position: absolute;
+    right: 465px;
+    top: 227px;
+    color:rgb(184, 181, 181);
+    cursor: pointer;
+}
+@media only screen and (max-width: 850px){
+    .icon{
+        position: static;
+        right: 260px;
+        
+    }
+}

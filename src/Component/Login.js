@@ -1,45 +1,59 @@
 import React from "react"
-import classes from './Login.module.css';
-import { BASE_URL } from './Constant';
-import { useHistory } from "react-router-dom";
-import { message } from "antd";
 import axios from "axios";
+import { message } from "antd";
+import jwt_decode from "jwt-decode";
+import { useHistory } from "react-router-dom";
+
+import { BASE_URL } from './Constant';
+import classes from './Login.module.css';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
+const eye = <FontAwesomeIcon icon={faEye} />;
+const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
 
 const Login = () => {
     const history = useHistory();
     const [error, seterror] = React.useState("")
-    const [login, setLogin] = React.useState("")
-
+    const [login, setLogin] = React.useState({})
+    const [passwordShown, setPasswordShown] = React.useState(false);
     const handleChange = (event) => {
         setLogin({ ...login, [event.target.name]: event.target.value });
+
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const data = JSON.stringify()
+        const data = JSON.stringify(login)
         const headers = { 'Content-Type': 'application/json' }
         try {
-            const response = await axios.post(`${BASE_URL}/signup/create`, data, { headers: headers })
+            const response = await axios.post(`${BASE_URL}/user/login`,
+                data,
+                { headers: headers }
+            )
 
-            const result = await response.data
+            const token = response.data.data.token
+            const userToken = jwt_decode(token)
+            localStorage.setItem('token', token)
 
             message.success({
-                content: "You are succesfully logged in ",
+                content: response.data.message,
                 style: {
                     marginTop: '10vh',
                 },
             });
 
             history.push('/store')
+        }
 
-        } catch (error) {
+        catch (error) {
             seterror({ error: error.message })
         }
     };
 
     React.useEffect(() => {
-        console.log(error);
     }, [error])
 
     return (
@@ -54,7 +68,9 @@ const Login = () => {
 
                     <label >
                         Password:
-                        <input required={true} className={classes.label2} name="password" type="password" onChange={handleChange} />
+                        <input required={true} className={classes.label2} name="password" onChange={handleChange} type={passwordShown ? "text" : "password"} />
+                        <i className={classes.icon} onClick={() => setPasswordShown(!passwordShown)}>{passwordShown ? eye : eyeSlash}</i>
+
                     </label>
                 </fieldset>
                 <button className={classes.login} type="submit">Login</button>
