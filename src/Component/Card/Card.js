@@ -2,7 +2,7 @@ import React from "react";
 import { Button, message } from 'antd';
 import classes from "./Card.module.css";
 import { Link } from "react-router-dom";
-import { BASE_URL } from './Constant';
+import { BASE_URL } from '../Constant';
 
 const Card = ({ imageUrl, description, id, card_button }) => {
 
@@ -24,8 +24,6 @@ const Card = ({ imageUrl, description, id, card_button }) => {
       seterror({ error: error.message })
     }
   }
-  React.useEffect(() => {
-  }, [error])
 
   return (
     <div className={classes.Card}>
@@ -35,6 +33,7 @@ const Card = ({ imageUrl, description, id, card_button }) => {
       </Link>
       <button>{card_button}</button>
       <Button type="primary" onClick={() => handledelete(id)}>delete</Button>
+      <p>{error}</p>
     </div>
   );
 }

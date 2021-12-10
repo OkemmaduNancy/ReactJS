@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from 'antd';
 
 import classes from "./AboutUs.module.css";
-import { PARAGRAPH } from "./Constant";
+import { PARAGRAPH } from "../Constant";
 
 class AboutUs extends React.Component {
   state = {
@@ -25,7 +25,7 @@ class AboutUs extends React.Component {
         {PARAGRAPH.map(paragraph => paragraph.p)
         }
         <div>
-        <Button type="primary" loading={loadings} onClick={() => this.enterLoading()} >Read More</Button>
+        <Button type="primary" loading={loadings} onClick={() => this.enterLoading()} >ReadMore</Button>
         </div>
       </div >
     );

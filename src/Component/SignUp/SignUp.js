@@ -3,7 +3,7 @@ import classes from "./SignUp.module.css";
 import { message } from 'antd';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { BASE_URL, INPUTS_FIELDS } from './Constant';
+import { BASE_URL, INPUTS_FIELDS } from '../Constant';
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -69,8 +69,6 @@ const Sign = () => {
       seterror({ error: error.message })
     }
   }
-  React.useEffect(() => {
-  }, [error])
   return (
     <div>
       <h1 className={classes.signUp} >Sign Up</h1>
@@ -107,6 +105,7 @@ const Sign = () => {
             <span>{isConfirmPwd}</span>
           </div>
         </fieldset >
+        <p>{error}</p>
         <button className={classes.signUp_button} type="submit" >Submit</button>
       </form >
     </div >

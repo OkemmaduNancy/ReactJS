@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Store.module.css";
-import Card from "./Card";
-import Navbar from "./Nav/Navbar";
-import { BASE_URL } from './Constant';
+import Card from "../Card/Card"
+import Navbar from "../Nav/Navbar";
+import { BASE_URL } from '../Constant';
 
 const Nav = () => {
   return (
@@ -39,11 +39,12 @@ const Store = () => {
     <div className={classes.bodyStore}>
       <Navbar />
       <Nav />
-      <a className={classes.Card}>
+      <h1 className={classes.Card}>
         {productsInfo.map(({ imageUrl, description, name, _id, }) => (
           <Card imageUrl={imageUrl} description={description} id={_id} card_button={name} />
         ))}
-      </a>
+      </h1>
+      <p>{error}</p>
     </div>
   );
 };

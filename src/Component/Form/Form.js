@@ -1,6 +1,6 @@
 import React from "react"
 import classes from './Form.module.css';
-import { BASE_URL } from './Constant';
+import { BASE_URL } from '../Constant';
 import { useHistory } from "react-router-dom";
 import { message } from "antd";
 import axios from "axios";

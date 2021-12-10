@@ -2,7 +2,7 @@ import { message } from "antd";
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import classes from './ProductDetails.module.css';
-import { BASE_URL } from './Constant';
+import { BASE_URL } from '../Constant';
 
 const ProductDetails = () => {
 

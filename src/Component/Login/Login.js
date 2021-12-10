@@ -4,7 +4,7 @@ import { message } from "antd";
 import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 
-import { BASE_URL } from './Constant';
+import { BASE_URL } from '../Constant';
 import classes from './Login.module.css';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
